@@ -1,5 +1,3 @@
-package dominio;
-
 /**
  * Created by Facu on 30/11/2016.
  */
