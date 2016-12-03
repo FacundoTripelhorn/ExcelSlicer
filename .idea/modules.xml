@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Dominio/Dominio.iml" filepath="$PROJECT_DIR$/Dominio/Dominio.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ExcelSlicer.iml" filepath="$PROJECT_DIR$/ExcelSlicer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ParadigmsExample.iml" filepath="$PROJECT_DIR$/ParadigmsExample.iml" />
       <module fileurl="file://$PROJECT_DIR$/UI/UI.iml" filepath="$PROJECT_DIR$/UI/UI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dao-module/dao-module.iml" filepath="$PROJECT_DIR$/dao-module/dao-module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/domain-module/domain-module.iml" filepath="$PROJECT_DIR$/domain-module/domain-module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-module/service-module.iml" filepath="$PROJECT_DIR$/service-module/service-module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-module/web-module.iml" filepath="$PROJECT_DIR$/web-module/web-module.iml" />
     </modules>
   </component>
 </project>

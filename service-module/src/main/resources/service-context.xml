@@ -5,7 +5,7 @@
 
     <import resource="classpath:dao-context.xml" />
 
-	<bean id="personService" class="ar.edu.uai.paradigms.service.impl.PersonServiceImpl">
-        <constructor-arg ref="personDAO" />
+	<bean id="archivoService" class="ar.edu.uai.paradigms.service.impl.ArchivoServiceImpl">
+        <constructor-arg ref="archivoDAO" />
     </bean>
 </beans>

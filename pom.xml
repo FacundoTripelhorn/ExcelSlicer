@@ -12,6 +12,7 @@
         <module>domain-module</module>
         <module>service-module</module>
         <module>dao-module</module>
+		<module>UI</module>
     </modules>
     <properties>
         <spring.version>4.1.1.RELEASE</spring.version>

@@ -68,9 +68,9 @@
 			<value>classpath:ar/edu/uai/config.properties</value>
 		</property>
 	</bean>
-	<bean id="personController" class="ar.edu.uai.paradigms.controller.person.PersonController">
-		<constructor-arg name="personService" ref="personService"/>
-		<constructor-arg name="personTranslator" ref="personTranslator"/>
+	<bean id="archivoController" class="ar.edu.uai.paradigms.controller.archivo.ArchivoController">
+		<constructor-arg name="archivoService" ref="archivoService"/>
+		<constructor-arg name="archivoTranslator" ref="archivoTranslator"/>
 	</bean>
-	<bean id="personTranslator" class="ar.edu.uai.paradigms.translator.person.PersonTranslator" />
+	<bean id="archivoTranslator" class="ar.edu.uai.paradigms.translator.archivo.ArchivoTranslator" />
 </beans>
