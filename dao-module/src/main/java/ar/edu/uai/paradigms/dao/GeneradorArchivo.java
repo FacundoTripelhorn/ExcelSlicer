@@ -16,7 +16,7 @@ public class GeneradorArchivo {
     public void crearArchivo(Archivo archivo)
     {
         HSSFWorkbook miexcel =new HSSFWorkbook();
-        File file =new File("C:\\Users\\GastónAlejandro\\Desktop\\PLC\\" + archivo.getNombre() + ".xls");
+        File file =new File("C:\\Users\\Facu\\Desktop\\Java\\" + archivo.getNombre() + ".xls");
         if (!file.exists())
         {
             try {
@@ -50,4 +50,6 @@ public class GeneradorArchivo {
         }
 
     }
+
+
 }

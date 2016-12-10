@@ -7,6 +7,13 @@
     <groupId>ar.edu.uai.paradigms</groupId>
     <artifactId>UI</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>ar.edu.uai.paradigms</groupId>
+            <artifactId>service-module</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
-    
+
 </project>
