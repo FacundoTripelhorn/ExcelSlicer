@@ -46,7 +46,7 @@ public class Archivo {
     public Archivo() {
     }
 
-    public Archivo(int id, String nombre, String path) {
+    public Archivo(Integer id, String nombre, String path) {
        this.id=id;
         this.nombre = nombre;
         this.path = path;
@@ -54,15 +54,10 @@ public class Archivo {
 
     @Override
     public String toString() {
-        return "Archivo{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", path='" + path + '\'' +
-                ", listaDeColumnas=" + listaDeColumnas +
-                '}';
+        return this.getClass().getSimpleName() + " [Id=" + id + ", Nombre=" + nombre + ", Path=" + path + "]";
     }
 
-    List<Columna> listaDeColumnas = new ArrayList<Columna>();
+    /** List<Integer> listaDeColumnas = new ArrayList<Integer>(); */
 
     public int GetFilas(){
         return 0;

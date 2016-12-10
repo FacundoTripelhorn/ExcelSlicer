@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class ArchivoDAO implements PersistentDAO<Archivo, Integer, ArchivoCriteria>{
 
-    @PersistenceContext(unitName = "paradigms-persist-unit")
+    @PersistenceContext(unitName = "paradigms-persistence-unit")
     private EntityManager entityManager;
 
     @Override
@@ -29,8 +29,8 @@ public class ArchivoDAO implements PersistentDAO<Archivo, Integer, ArchivoCriter
 
     @Override
     public Archivo retrieve(Integer id) {
-        Archivo archivo = this.entityManager.find(Archivo.class, id);
-        return archivo;
+        return  this.entityManager.find(Archivo.class, id);
+
     }
 
     @Override

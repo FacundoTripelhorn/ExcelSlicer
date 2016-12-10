@@ -25,7 +25,7 @@ public class ArchivoDTO {
     }
 
     @JsonCreator
-    public ArchivoDTO(@JsonProperty("Id") int id,@JsonProperty("Nombre") String nombre,@JsonProperty("Path") String path) {
+    public ArchivoDTO(@JsonProperty("Id") Integer id,@JsonProperty("Nombre") String nombre,@JsonProperty("Path") String path) {
         this.id = id;
         this.nombre = nombre;
         this.path = path;
@@ -33,10 +33,6 @@ public class ArchivoDTO {
 
     @Override
     public String toString() {
-        return "ArchivoDTO{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", path='" + path + '\'' +
-                '}';
+        return this.getClass().getSimpleName() + " [Id=" + id + ", Name=" + nombre + ", Path=" + path + "]";
     }
 }
