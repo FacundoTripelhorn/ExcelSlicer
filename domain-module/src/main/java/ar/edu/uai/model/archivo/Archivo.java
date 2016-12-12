@@ -31,6 +31,25 @@ public class Archivo {
     @Column(name = "PATH", nullable = false)
     private String path;
 
+    private List<Fila> listaDeFilas = new ArrayList<Fila>();
+    private List<Columna> listaDeColumnas = new ArrayList<Columna>();
+
+    public List<Columna> getListaDeColumnas() {
+        return listaDeColumnas;
+    }
+
+    public void setListaDeColumnas(List<Columna> listaDeColumnas) {
+        this.listaDeColumnas = listaDeColumnas;
+    }
+
+    public List<Fila> getListaDeFilas() {
+        return listaDeFilas;
+    }
+
+    public void setListaDeFilas(List<Fila> listaDeFilas) {
+        this.listaDeFilas = listaDeFilas;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -57,9 +76,9 @@ public class Archivo {
         return this.getClass().getSimpleName() + " [Id=" + id + ", Nombre=" + nombre + ", Path=" + path + "]";
     }
 
-    /** List<Integer> listaDeColumnas = new ArrayList<Integer>(); */
-
-    public int GetFilas(){
-        return 0;
+    public void agregarFila(Fila fila){
+        getListaDeFilas().add(fila);
     }
+    public void agregarColumna(Columna columna){ getListaDeColumnas().add(columna);}
+
 }

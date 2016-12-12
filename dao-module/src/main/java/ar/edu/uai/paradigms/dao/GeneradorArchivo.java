@@ -1,12 +1,18 @@
 package ar.edu.uai.paradigms.dao;
 
 import ar.edu.uai.model.archivo.Archivo;
+import ar.edu.uai.model.archivo.Celda;
+import ar.edu.uai.model.archivo.Columna;
+import ar.edu.uai.model.archivo.Fila;
 import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by GastónAlejandro on 10/12/2016.
@@ -16,7 +22,7 @@ public class GeneradorArchivo {
     public void crearArchivo(Archivo archivo)
     {
         HSSFWorkbook miexcel =new HSSFWorkbook();
-        File file =new File("C:\\Users\\Facu\\Desktop\\Java\\" + archivo.getNombre() + ".xls");
+        File file =new File(archivo.getPath()+ "\\" + archivo.getNombre() + ".xls");
         if (!file.exists())
         {
             try {
@@ -50,6 +56,36 @@ public class GeneradorArchivo {
         }
 
     }
+    public Archivo cargarArchivo(String excelFilePath) throws IOException {
+        int id=0;
+      Archivo archivo = new Archivo();
+        FileInputStream inputStream = new FileInputStream(new File(excelFilePath));
 
+    Workbook workbook = new HSSFWorkbook(inputStream);
+    Sheet firstSheet = workbook.getSheetAt(0);
+    Iterator<Row> iterator = firstSheet.iterator();
 
+    while (iterator.hasNext()){
+        Row nextRow = iterator.next();
+        Iterator<Cell> cellIterator = nextRow.cellIterator();
+        Fila fila = new Fila(nextRow.getRowNum());
+
+        while (cellIterator.hasNext()){
+            Cell cell=cellIterator.next();
+            Celda celda= new Celda(cell.getStringCellValue());
+            fila.agregarCelda(celda);
+        }
+        if (fila.getId()==0){
+            for (Celda celda: fila.getListaDeCeldas()){
+                archivo.getListaDeColumnas().add(new Columna(id, celda.getValor()));
+            }
+        } else {
+            archivo.agregarFila(fila);
+        }
+    }
+
+    workbook.close();
+    inputStream.close();
+        return archivo;
+    }
 }

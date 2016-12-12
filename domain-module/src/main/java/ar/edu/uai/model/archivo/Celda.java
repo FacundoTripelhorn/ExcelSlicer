@@ -5,6 +5,18 @@ package ar.edu.uai.model.archivo;
  */
 public class Celda {
     String valor;
-    int ancho;
-    int alto;
+
+
+    public Celda(String valor) {
+        this.valor = valor;
+
+    }
+
+    public String getValor() {
+        return valor;
+    }
+
+    public void setValor(String valor) {
+        this.valor = valor;
+    }
 }

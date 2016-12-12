@@ -23,8 +23,7 @@ public class ArchivoServiceImpl implements ArchivoService {
     @Transactional
     @Override
     public Archivo saveArchivo(Archivo archivo) {
-        GeneradorArchivo generadorArchivo = new GeneradorArchivo();
-        generadorArchivo.crearArchivo(archivo);
+
         return this.archivoDAO.create(archivo);
     }
 
